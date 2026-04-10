@@ -1,9 +1,18 @@
-<?php 
-include './inc/header/header.php';
-include './inc/Hero.php';
-include './inc/services.php';
-include './inc/blog.php';
+<?php
+require_once __DIR__ . '/src/init.php';
 
- 
-include './inc/footer.php';
-?>
+$pageTitle = "Home | " . SITE_NAME;
+$pageDescription = "Welcome to the official website of the New Juaben South Municipal Assembly (NJSMA), Koforidua.";
+
+include VIEW_PATH . '/partials/header.php';
+
+// Hero Section
+include ROOT_PATH . '/inc/Hero.php';
+
+// Services/Departments Overview
+include ROOT_PATH . '/inc/services.php';
+
+// Latest News Section
+include ROOT_PATH . '/inc/blog.php';
+
+include VIEW_PATH . '/partials/footer.php';

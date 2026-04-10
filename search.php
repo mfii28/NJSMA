@@ -1,114 +1,83 @@
-<?php 
-session_start();
-error_reporting(0);
-include('inc/header/dbConnection.php');
-    ?>
- 
+<?php
+require_once __DIR__ . '/src/init.php';
 
+use Models\Post;
 
- <!-- ======= Blog Details Section ======= -->
- <section id="blog" class="blog">
-    
-      <div class="container" data-aos="fade-up">
-      <div class="section-title">
-          <p>Top Stories</p>
-           
-        </div>
+$postModel = new Post();
+$searchTerm = $_GET['s'] ?? '';
+$page = (int)($_GET['page'] ?? 1);
+$limit = 8;
+$offset = ($page - 1) * $limit;
 
-
-
-
-
-
-        
-        <div class="row g-5">
-
-          <div class="col-lg-8">
-
-
-            <article class="blog-details">
-
-            <?php 
-        if($_POST['searchtitle']!=''){
-$st=$_SESSION['searchtitle']=$_POST['searchtitle'];
+$results = [];
+if (!empty($searchTerm)) {
+    $results = $postModel->search($searchTerm, $limit, $offset);
+    $totalRecords = $postModel->getCount($searchTerm);
+} else {
+    $results = $postModel->getAllActive($limit, $offset);
+    $totalRecords = $postModel->getCount();
 }
-$st;
-             
 
+$totalPages = ceil($totalRecords / $limit);
 
-
-
-     if (isset($_GET['pageno'])) {
-            $pageno = $_GET['pageno'];
-        } else {
-            $pageno = 1;
-        }
-        $no_of_records_per_page = 8;
-        $offset = ($pageno-1) * $no_of_records_per_page;
-
-
-        $total_pages_sql = "SELECT COUNT(*) FROM tblposts";
-        $result = mysqli_query($con,$total_pages_sql);
-        $total_rows = mysqli_fetch_array($result)[0];
-        $total_pages = ceil($total_rows / $no_of_records_per_page);
-
-
-$query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblcategory.CategoryName as category,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.PostTitle like '%$st%' and tblposts.Is_Active=1 LIMIT $offset, $no_of_records_per_page");
-
-$rowcount=mysqli_num_rows($query);
-if($rowcount==0)
-{
-echo "No record found";
-}
-else {
-while ($row=mysqli_fetch_array($query)) {
-
-
+$pageTitle = "Search Results for '" . htmlspecialchars($searchTerm) . "' | " . SITE_NAME;
+include VIEW_PATH . '/partials/header.php';
 ?>
 
-<a href="">
-<div class="post-img">
-                <img src="./dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid">
-              </div>
+<main id="main">
+    <section id="blog" class="blog mt-5">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Search Results</h2>
+                <p><?= !empty($searchTerm) ? "Showing results for '" . htmlspecialchars($searchTerm) . "'" : "Latest Stories" ?></p>
+            </div>
 
-              <h2 class="card-title"><?php echo htmlentities($row['posttitle']);?></h2>
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <div class="row gy-4 posts-list">
+                        <?php foreach ($results as $post): ?>
+                            <div class="col-12">
+                                <article class="d-flex align-items-center mb-4">
+                                    <div class="post-img me-4" style="width: 200px;">
+                                        <img src="<?= SITE_URL ?>/dashboard/postimages/<?= $post['PostImage'] ?>" alt="" class="img-fluid">
+                                    </div>
+                                    <div>
+                                        <h2 class="title" style="font-size: 1.5rem;">
+                                            <a href="blogs.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['PostTitle']) ?></a>
+                                        </h2>
+                                        <p class="post-date text-muted">
+                                            <?= date('M d, Y', strtotime($post['PostingDate'])) ?> | <?= htmlspecialchars($post['CategoryName']) ?>
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        <?php endforeach; ?>
 
-              <div class="meta-top">
-                <ul>
-                Posted on <?php echo htmlentities($row['postingdate']);?>
-                </ul>
-              </div>
-</a>
-           <!-- End meta top -->
+                        <?php if (empty($results)): ?>
+                            <p>No results found for your search.</p>
+                        <?php endif; ?>
+                    </div>
 
-             <!-- ======= Blog Section ======= -->
-             <?php } ?>
+                    <!-- Pagination -->
+                    <?php if ($totalPages > 1): ?>
+                        <div class="blog-pagination mt-4">
+                            <ul class="justify-content-center">
+                                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                                    <li class="<?= $page == $i ? 'active' : '' ?>">
+                                        <a href="?s=<?= urlencode($searchTerm) ?>&page=<?= $i ?>"><?= $i ?></a>
+                                    </li>
+                                <?php endfor; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+                </div>
 
-<ul class="pagination justify-content-center mb-4">
-    <li class="page-item"><a href="?pageno=1"  class="page-link">First</a></li>
-    <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?> page-item">
-        <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="page-link">Prev</a>
-    </li>
-    <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?> page-item">
-        <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?> " class="page-link">Next</a>
-    </li>
-    <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Last</a></li>
-</ul>
-<?php } ?>
-
-</article>
-
-          </div>
-          
-
-          <div class="col-lg-4">
-          <?php include('inc/sidebar.php');?>
+                <div class="col-lg-4">
+                    <?php include ROOT_PATH . '/inc/sidebar.php'; ?>
+                </div>
+            </div>
         </div>
+    </section>
+</main>
 
-      </div>
-    </section><!-- End Blog Details Section -->
-
-    
- 
-<?php include './inc/footer.php';
-?>
+<?php include VIEW_PATH . '/partials/footer.php'; ?>

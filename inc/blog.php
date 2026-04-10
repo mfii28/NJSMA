@@ -1,108 +1,51 @@
- <!-- ======= Blog Details Section ======= -->
- <section id="blog" class="blog">
-    
-      <div class="container" data-aos="fade-up">
-      <div class="section-title">
-          <p>Top Stories</p>
-           
+<?php
+use Models\Post;
+$postModel = new Post();
+$latestPosts = $postModel->getAllActive(3);
+?>
+
+<!-- ======= Latest News Section ======= -->
+<section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Latest News</h2>
+            <p>Recent updates from the Assembly</p>
         </div>
-
-        <div class="row g-5">
-
-          <div class="col-lg-8">
-
-            <article class="blog-details">
-
-              <div class="post-img">
-                <img src="./dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h2>
-
-              <div class="meta-top">
-                <ul>
-                  <li class="d-flex mb-4 align-items-center"><i class="bi bi-person"></i> <a href="blogs.php">John Doe</a></li>
-                </ul>
-              </div><!-- End meta top -->
-
-             <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up">
 
         <div class="row gy-4 posts-list">
+            <?php foreach ($latestPosts as $post): ?>
+                <div class="col-lg-4 col-md-6">
+                    <article>
+                        <div class="post-img">
+                            <img src="<?= SITE_URL ?>/dashboard/postimages/<?= $post['PostImage'] ?>" alt="" class="img-fluid">
+                        </div>
 
-          <div class="col">
-            <article>
+                        <p class="post-category"><?= htmlspecialchars($post['CategoryName']) ?></p>
 
-              <div class="post-img">
-                <img src="./dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid">
-              </div>
+                        <h2 class="title">
+                            <a href="blogs.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['PostTitle']) ?></a>
+                        </h2>
 
-              <p class="post-category">Politics</p>
-
-              <h2 class="title">
-                <a href="blogs.php">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="./dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author-list">Maria Doe</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                  </p>
+                        <div class="d-flex align-items-center">
+                            <div class="post-meta">
+                                <p class="post-date">
+                                    <time datetime="<?= $post['PostingDate'] ?>"><?= date('M d, Y', strtotime($post['PostingDate'])) ?></time>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-              </div>
+            <?php endforeach; ?>
 
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col">
-            <article>
-
-              <div class="post-img">
-                <img src="./dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Sports</p>
-
-              <h2 class="title">
-                <a href="blogs.php">Nisi magni odit consequatur autem nulla dolorem</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="./dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author-list">Allisa Mayer</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
-                  </p>
+            <?php if (empty($latestPosts)): ?>
+                <div class="col-12 text-center">
+                    <p>No news stories found at the moment.</p>
                 </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-        
-        </div><!-- End blog posts list -->
-
-        <div class="blog-pagination">
-          <ul class="justify-content-center">
-           <li class="active"><a href="blogs.php">View More</a></li>
-            </ul>
-        </div><!-- End blog pagination -->
-
-      </div>
-    </section><!-- End Blog Section -->
-
-
-          </div>
-
-          <div class="col-lg-4">
-          <?php include('sidebar.php');?>
+            <?php endif; ?>
         </div>
 
-      </div>
-    </section><!-- End Blog Details Section -->
-
-    
+        <div class="blog-pagination text-center mt-4">
+            <a href="blogs.php" class="btn btn-primary">View All News</a>
+        </div>
+    </div>
+</section>

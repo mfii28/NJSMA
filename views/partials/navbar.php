@@ -1,0 +1,65 @@
+<!-- ======= Header ======= -->
+<section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-clock d-flex align-items-center"><span> <?= date('l, d M Y') ?></span></i>
+            <i class="bi bi-geo-alt d-flex align-items-center ms-4"><span> Koforidua, GH (29°C)</span></i>
+            <i class="bi bi-envelope d-flex align-items-center ms-4"><a href="mailto:info@njsma.gov.gh"> info@njsma.gov.gh</a></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+    </div>
+</section>
+
+<header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="<?= SITE_URL ?>" class="logo d-flex align-items-center">
+            <img src="<?= SITE_URL ?>/dashboard/assets/img/logo-1.png" alt="NJSMA Logo">
+            <h1>NJSMA<span>.</span></h1>
+        </a>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="<?= SITE_URL ?>/">Home</a></li>
+                <li><a href="<?= SITE_URL ?>/about.php">About</a></li>
+                <li class="dropdown"><a href="#"><span>Department</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                        <?php 
+                        $navDepts = (new \Models\Department())->getAll();
+                        foreach(array_slice($navDepts, 0, 5) as $nd): 
+                        ?>
+                            <li><a href="<?= SITE_URL ?>/department-details.php?id=<?= $nd['id'] ?>"><?= htmlspecialchars($nd['DeptName']) ?></a></li>
+                        <?php endforeach; ?>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a href="<?= SITE_URL ?>/deptInfo.php">View All</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>The Assembly</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                        <li><a href="<?= SITE_URL ?>/assemblyInfo.php">About The Assembly</a></li>
+                        <li><a href="<?= SITE_URL ?>/management.php">Our Management</a></li>
+                        <li><a href="<?= SITE_URL ?>/assembly-members.php">Assembly Members</a></li>
+                        <li><a href="<?= SITE_URL ?>/Histroy.php">Our History</a></li>
+                        <li><a href="<?= SITE_URL ?>/service-charter.php">Service Charter</a></li>
+                        <li><a href="<?= SITE_URL ?>/MCE.php">The MCE</a></li>
+                    </ul>
+                </li>
+                <li><a href="<?= SITE_URL ?>/blogs.php">News</a></li>
+                <li class="dropdown"><a href="#"><span>Portal</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                        <li><a href="<?= SITE_URL ?>/repository.php">Digital Repository</a></li>
+                        <li><a href="<?= SITE_URL ?>/gallery.php">Media Gallery</a></li>
+                        <li><a href="<?= SITE_URL ?>/tenders.php">Tenders & Procurement</a></li>
+                        <li><a href="<?= SITE_URL ?>/repository.php?cat=Forms">Application Forms</a></li>
+                    </ul>
+                </li>
+                <li><a href="<?= SITE_URL ?>/contact.php">Contact</a></li>
+            </ul>
+        </nav>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+</header>
