@@ -21,48 +21,55 @@ include VIEW_PATH . '/partials/header.php';
 ?>
 
 <main id="main">
-    <section class="breadcrumbs d-flex align-items-center" style="background-image: url('dashboard/assets/img/heroImg/slider-1.jpg'); height: 200px; background-size: cover;">
-        <div class="container text-center">
-            <h2 class="text-white"><?= htmlspecialchars($dept['DeptName']) ?></h2>
+    <section class="page-header text-center">
+        <div class="container">
+            <h1><?= htmlspecialchars($dept['DeptName']) ?></h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center bg-transparent">
+                    <li class="breadcrumb-item"><a href="<?= SITE_URL ?>" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item"><a href="<?= SITE_URL ?>/deptInfo.php" class="text-white">Departments</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page"><?= htmlspecialchars($dept['DeptName']) ?></li>
+                </ol>
+            </nav>
         </div>
     </section>
 
-    <section class="department-details mt-5">
+    <section class="department-details pb-5">
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="headOfDept text-center p-4 shadow-sm bg-white rounded">
+                    <div class="dept-head-box shadow-sm">
                         <img src="<?= SITE_URL ?>/dashboard/assets/img/profileImg/<?= $dept['HeadImage'] ?? 'default.jpg' ?>" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;" alt="">
                         <h4><?= htmlspecialchars($dept['HeadName'] ?? 'Head of Department') ?></h4>
                         <p class="text-muted">Head, <?= htmlspecialchars($dept['DeptName']) ?></p>
                     </div>
                     
-                    <div class="sidebar-box mt-4 p-4 bg-light">
-                        <h4>Other Departments</h4>
-                        <ul class="list-unstyled">
+                    <div class="sidebar-nav mt-4 shadow-sm">
+                        <h4>Explore Departments</h4>
+                        <ul class="list-unstyled mb-0">
                             <?php 
                             $allDepts = $deptModel->getAll();
                             foreach($allDepts as $d): if($d['id'] == $dept['id']) continue; 
                             ?>
-                                <li class="mb-2"><a href="?id=<?= $d['id'] ?>"><?= htmlspecialchars($d['DeptName']) ?></a></li>
+                                <li><a href="?id=<?= $d['id'] ?>"><i class="bi bi-chevron-right me-2 text-primary"></i> <?= htmlspecialchars($d['DeptName']) ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-8">
-                    <div class="content p-4">
-                        <h3>About the Department</h3>
-                        <div class="mt-4">
+                    <div class="content-card shadow-sm">
+                        <h3>Mandate & Overview</h3>
+                        <div class="description-text mb-5" style="line-height: 1.8; color: #555;">
                             <?= nl2br(htmlspecialchars($dept['Description'])) ?>
                         </div>
                         
-                        <div class="mt-5 p-4 bg-primary text-white rounded">
-                            <h4>Key Responsibilities</h4>
-                            <ul>
-                                <li>Policy formation and implementation within the municipality.</li>
-                                <li>Coordination of specialized municipal services.</li>
-                                <li>Monitoring and reporting on localized development projects.</li>
+                        <div class="info-banner">
+                            <h4 class="mb-3"><i class="bi bi-check2-circle me-2"></i> Role & Responsibilities</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2 d-flex align-items-start"><i class="bi bi-dot me-2 fs-4"></i> Policy formulation and implementation within the municipality.</li>
+                                <li class="mb-2 d-flex align-items-start"><i class="bi bi-dot me-2 fs-4"></i> Coordination of specialized municipal services for residents.</li>
+                                <li class="mb-0 d-flex align-items-start"><i class="bi bi-dot me-2 fs-4"></i> Monitoring and reporting on localized developmental initiatives.</li>
                             </ul>
                         </div>
                     </div>

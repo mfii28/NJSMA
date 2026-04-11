@@ -23,6 +23,7 @@
     <!-- Main CSS Files -->
     <link rel="stylesheet" href="<?= SITE_URL ?>/lib/css/variable.css">
     <link rel="stylesheet" href="<?= SITE_URL ?>/lib/css/main.css">
+    <link rel="stylesheet" href="<?= SITE_URL ?>/lib/css/njsma-ama-ui.css">
     <link rel="stylesheet" href="<?= SITE_URL ?>/inc/css.css">
 </head>
 <body>

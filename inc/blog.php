@@ -5,47 +5,42 @@ $latestPosts = $postModel->getAllActive(3);
 ?>
 
 <!-- ======= Latest News Section ======= -->
-<section id="blog" class="blog">
+<section id="latest-news" class="latest-news py-5">
     <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Latest News</h2>
-            <p>Recent updates from the Assembly</p>
-        </div>
+        <div class="latest-news-grid">
+            <!-- Left Info Column -->
+            <div class="news-intro">
+                <h2>Latest <br>News</h2>
+                <p>Stay updated with the latest stories, announcements, and developmental projects from the New Juaben South Municipal Assembly.</p>
+                <a href="blogs.php" class="view-all-news">
+                    View All News
+                    <div class="view-all-circle">
+                        <i class="bi bi-arrow-up-right"></i>
+                    </div>
+                </a>
+            </div>
 
-        <div class="row gy-4 posts-list">
-            <?php foreach ($latestPosts as $post): ?>
-                <div class="col-lg-4 col-md-6">
-                    <article>
-                        <div class="post-img">
-                            <img src="<?= SITE_URL ?>/dashboard/postimages/<?= $post['PostImage'] ?>" alt="" class="img-fluid">
+            <!-- Right News List Column -->
+            <div class="news-items-list">
+                <?php foreach ($latestPosts as $post): ?>
+                    <a href="blogs.php?id=<?= $post['id'] ?>" class="news-card-horizontal">
+                        <div class="news-card-content">
+                            <span class="cat"><?= htmlspecialchars($post['CategoryName']) ?></span>
+                            <span class="date"><?= date('F Y', strtotime($post['PostingDate'])) ?></span>
+                            <h3><?= htmlspecialchars($post['PostTitle']) ?></h3>
                         </div>
-
-                        <p class="post-category"><?= htmlspecialchars($post['CategoryName']) ?></p>
-
-                        <h2 class="title">
-                            <a href="blogs.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['PostTitle']) ?></a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <div class="post-meta">
-                                <p class="post-date">
-                                    <time datetime="<?= $post['PostingDate'] ?>"><?= date('M d, Y', strtotime($post['PostingDate'])) ?></time>
-                                </p>
-                            </div>
+                        <div class="news-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
                         </div>
-                    </article>
-                </div>
-            <?php endforeach; ?>
+                    </a>
+                <?php endforeach; ?>
 
-            <?php if (empty($latestPosts)): ?>
-                <div class="col-12 text-center">
-                    <p>No news stories found at the moment.</p>
-                </div>
-            <?php endif; ?>
-        </div>
-
-        <div class="blog-pagination text-center mt-4">
-            <a href="blogs.php" class="btn btn-primary">View All News</a>
+                <?php if (empty($latestPosts)): ?>
+                    <div class="text-center p-4">
+                        <p>No news stories found at the moment.</p>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>

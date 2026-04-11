@@ -10,35 +10,42 @@ include VIEW_PATH . '/partials/header.php';
 ?>
 
 <main id="main">
-    <section class="breadcrumbs d-flex align-items-center" style="background-image: url('dashboard/assets/img/heroImg/slider-1.jpg'); height: 200px; background-size: cover;">
-        <div class="container text-center">
-            <h2 class="text-white">Media Gallery</h2>
+    <section class="page-header text-center">
+        <div class="container">
+            <h1>Media Gallery</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center bg-transparent">
+                    <li class="breadcrumb-item"><a href="<?= SITE_URL ?>" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Gallery</li>
+                </ol>
+            </nav>
         </div>
     </section>
 
-    <section id="portfolio" class="portfolio mt-5">
+    <section id="gallery" class="gallery pb-5">
       <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Photos & Videos</h2>
-          <p>Memorable moments from municipal events and projects.</p>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
           <?php if (empty($galleries)): ?>
-             <div class="col-12 text-center">
-                <p class="text-muted">No gallery items found yet.</p>
+             <div class="col-12">
+                <div class="content-card text-center py-5 shadow-sm">
+                   <i class="bi bi-images fs-1 text-muted mb-3"></i>
+                   <h4>Our Gallery is Expanding</h4>
+                   <p class="text-muted">New photos and videos from municipal projects will be uploaded soon.</p>
+                </div>
              </div>
           <?php else: ?>
             <?php foreach ($galleries as $g): ?>
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap shadow-sm">
-                  <img src="<?= SITE_URL ?>/dashboard/assets/img/gallery/<?= $g['ThumbImage'] ?? 'default-gallery.jpg' ?>" class="img-fluid" alt="">
-                  <div class="portfolio-info">
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
+                <div class="gallery-item-card">
+                  <div class="gallery-img">
+                    <img src="<?= SITE_URL ?>/dashboard/assets/img/gallery/<?= $g['ThumbImage'] ?? 'default-gallery.jpg' ?>" class="img-fluid" alt="<?= htmlspecialchars($g['Title']) ?>">
+                  </div>
+                  <div class="gallery-overlay">
                     <h4><?= htmlspecialchars($g['Title']) ?></h4>
                     <p><?= htmlspecialchars($g['Description']) ?></p>
-                    <div class="portfolio-links">
-                      <a href="<?= SITE_URL ?>/gallery-details.php?id=<?= $g['id'] ?>" title="More Details"><i class="bi bi-link"></i></a>
-                    </div>
+                    <a href="<?= SITE_URL ?>/gallery-details.php?id=<?= $g['id'] ?>" class="gallery-btn">
+                      <i class="bi bi-plus-lg"></i>
+                    </a>
                   </div>
                 </div>
               </div>

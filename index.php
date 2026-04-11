@@ -9,6 +9,9 @@ include VIEW_PATH . '/partials/header.php';
 // Hero Section
 include ROOT_PATH . '/inc/Hero.php';
 
+// MCE Featured Section
+include ROOT_PATH . '/inc/featured.php';
+
 // Services/Departments Overview
 include ROOT_PATH . '/inc/services.php';
 

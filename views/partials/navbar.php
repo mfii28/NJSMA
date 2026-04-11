@@ -2,15 +2,20 @@
 <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-            <i class="bi bi-clock d-flex align-items-center"><span> <?= date('l, d M Y') ?></span></i>
-            <i class="bi bi-geo-alt d-flex align-items-center ms-4"><span> Koforidua, GH (29°C)</span></i>
+            <i class="bi bi-geo-alt d-flex align-items-center"><span> GA-000-0000 | Koforidua, GH</span></i>
             <i class="bi bi-envelope d-flex align-items-center ms-4"><a href="mailto:info@njsma.gov.gh"> info@njsma.gov.gh</a></i>
+            <div class="quick-links d-none d-lg-flex ms-4">
+                <a href="<?= SITE_URL ?>/repository.php?cat=Bye-Laws" class="ms-2">Bye-Laws</a> |
+                <a href="<?= SITE_URL ?>/blogs.php" class="ms-2">News</a> |
+                <a href="<?= SITE_URL ?>/contact.php" class="ms-2">Contact</a>
+            </div>
         </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <div class="d-flex align-items-center">
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            </div>
+            <a href="https://customer.gov-gh.com" class="pay-now-btn">Pay for Fees</a>
         </div>
     </div>
 </section>
@@ -24,38 +29,36 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a href="<?= SITE_URL ?>/">Home</a></li>
-                <li><a href="<?= SITE_URL ?>/about.php">About</a></li>
-                <li class="dropdown"><a href="#"><span>Department</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                        <?php 
-                        $navDepts = (new \Models\Department())->getAll();
-                        foreach(array_slice($navDepts, 0, 5) as $nd): 
-                        ?>
-                            <li><a href="<?= SITE_URL ?>/department-details.php?id=<?= $nd['id'] ?>"><?= htmlspecialchars($nd['DeptName']) ?></a></li>
-                        <?php endforeach; ?>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a href="<?= SITE_URL ?>/deptInfo.php">View All</a></li>
-                    </ul>
-                </li>
                 <li class="dropdown"><a href="#"><span>The Assembly</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
-                        <li><a href="<?= SITE_URL ?>/assemblyInfo.php">About The Assembly</a></li>
-                        <li><a href="<?= SITE_URL ?>/management.php">Our Management</a></li>
+                        <li><a href="<?= SITE_URL ?>/assemblyInfo.php">About NJSMA</a></li>
+                        <li><a href="<?= SITE_URL ?>/MCE.php">The MCE</a></li>
+                        <li><a href="<?= SITE_URL ?>/management.php">Management Team</a></li>
                         <li><a href="<?= SITE_URL ?>/assembly-members.php">Assembly Members</a></li>
                         <li><a href="<?= SITE_URL ?>/Histroy.php">Our History</a></li>
                         <li><a href="<?= SITE_URL ?>/service-charter.php">Service Charter</a></li>
-                        <li><a href="<?= SITE_URL ?>/MCE.php">The MCE</a></li>
                     </ul>
                 </li>
-                <li><a href="<?= SITE_URL ?>/blogs.php">News</a></li>
-                <li class="dropdown"><a href="#"><span>Portal</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <li class="dropdown"><a href="<?= SITE_URL ?>/deptInfo.php"><span>Departments</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
-                        <li><a href="<?= SITE_URL ?>/repository.php">Digital Repository</a></li>
-                        <li><a href="<?= SITE_URL ?>/gallery.php">Media Gallery</a></li>
-                        <li><a href="<?= SITE_URL ?>/tenders.php">Tenders & Procurement</a></li>
-                        <li><a href="<?= SITE_URL ?>/repository.php?cat=Forms">Application Forms</a></li>
+                        <?php 
+                        $navDepts = (new \Models\Department())->getAll();
+                        foreach(array_slice($navDepts, 0, 6) as $nd): 
+                        ?>
+                            <li><a href="<?= SITE_URL ?>/department-details.php?id=<?= $nd['id'] ?>"><?= htmlspecialchars($nd['DeptName']) ?></a></li>
+                        <?php endforeach; ?>
+                        <li><a href="<?= SITE_URL ?>/deptInfo.php"><b>View All Departments</b></a></li>
                     </ul>
                 </li>
+                <li><a href="<?= SITE_URL ?>/service-charter.php">Services</a></li>
+                <li><a href="<?= SITE_URL ?>/tenders.php">Projects & Tenders</a></li>
+                <li class="dropdown"><a href="#"><span>Media Center</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                        <li><a href="<?= SITE_URL ?>/blogs.php">Latest News</a></li>
+                        <li><a href="<?= SITE_URL ?>/gallery.php">Photo Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="<?= SITE_URL ?>/repository.php">Documents Centre</a></li>
                 <li><a href="<?= SITE_URL ?>/contact.php">Contact</a></li>
             </ul>
         </nav>

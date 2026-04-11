@@ -1,79 +1,42 @@
+<div class="sidebar">
 
-<div class="sidebar ">
-
-<div class="sidebar-item search-form">
-  <h3 class="sidebar-title">Search</h3>
-  <form action="search.php" class="mt-3">
-    <input type="text" name="searchtitle" placeholder="Search for..." required>
-    <button type="submit"><i class="bi bi-search"></i></button>
-  </form>
-</div><!-- End sidebar search formn-->
-
-<div class="sidebar-item  categories">
-  <h3 class="sidebar-title">Categories</h3>
-  <ul class="mt-3">
-  <?php $query=mysqli_query($con,"select id,CategoryName from tblcategory");
-        while($row=mysqli_fetch_array($query))
-   { ?>
-
-<li>
-        <a href="category.php?catid=<?php echo htmlentities($row['id'])?>"><?php echo htmlentities($row['CategoryName']);?></a>
-      </li>
-<?php } ?>
-  </ul>
-</div><!-- End sidebar categories-->
-
-<div class="sidebar-item recent-posts">
-  <h3 class="sidebar-title">Recent Posts</h3>
-
-  <div class="mt-3">
-
-
-  <?php
-$query=mysqli_query($con,"select tblposts.PostingDate as postingdate, tblposts.id as pid,tblposts.PostTitle as posttitle from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId limit 8");
-while ($row=mysqli_fetch_array($query)) {
-
-?>
-
-
-
-
-      <div  class="post-item mt-3">
-       >
-      <div>
-        <h4><a href="blogPreview.php?nid=<?php echo htmlentities($row['pid'])?>"><?php echo htmlentities($row['posttitle']);?></a></h4>
-        <time datetime="2020-01-01"> Posted on <?php echo htmlentities($row['postingdate']);?></time>
+  <div class="sidebar-nav shadow-sm mb-4">
+    <h4>Search News</h4>
+    <form action="search.php" class="mt-3">
+      <div class="input-group">
+        <input type="text" name="searchtitle" class="form-control" placeholder="Search..." required>
+        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
       </div>
-    </div><!-- End recent post item-->
-
-
-
-      <?php } ?>
-
-
-    
-
+    </form>
   </div>
 
-</div><!-- End sidebar recent posts-->
-<!-- 
-<div class="sidebar-item tags">
-  <h3 class="sidebar-title">Tags</h3>
-  <ul class="mt-3">
-    <li><a href="#">App</a></li>
-    <li><a href="#">IT</a></li>
-    <li><a href="#">Business</a></li>
-    <li><a href="#">Mac</a></li>
-    <li><a href="#">Design</a></li>
-    <li><a href="#">Office</a></li>
-    <li><a href="#">Creative</a></li>
-    <li><a href="#">Studio</a></li>
-    <li><a href="#">Smart</a></li>
-    <li><a href="#">Tips</a></li>
-    <li><a href="#">Marketing</a></li>
-  </ul>
-</div>End sidebar tags -->
+  <div class="sidebar-nav shadow-sm mb-4">
+    <h4>Categories</h4>
+    <ul class="list-unstyled mb-0 mt-3">
+      <?php 
+      $query = mysqli_query($con, "SELECT id, CategoryName FROM tblcategory");
+      while($row = mysqli_fetch_array($query)) { 
+      ?>
+        <li class="mb-2">
+          <a href="category.php?catid=<?= $row['id'] ?>" class="text-decoration-none text-dark"><i class="bi bi-chevron-right me-2 text-primary small"></i> <?= htmlspecialchars($row['CategoryName']) ?></a>
+        </li>
+      <?php } ?>
+    </ul>
+  </div>
 
-</div><!-- End Blog Sidebar -->
+  <div class="sidebar-nav shadow-sm mb-4">
+    <h4>Recent News</h4>
+    <div class="mt-3">
+      <?php
+      $query = mysqli_query($con, "SELECT p.PostingDate, p.id, p.PostTitle FROM tblposts p WHERE p.Is_Active = 1 ORDER BY p.PostingDate DESC LIMIT 5");
+      while ($row = mysqli_fetch_array($query)) {
+      ?>
+        <div class="mb-3 border-bottom pb-2">
+          <h6 class="mb-1"><a href="blogs.php?id=<?= $row['id'] ?>" class="text-dark text-decoration-none fw-bold small"><?= htmlspecialchars($row['PostTitle']) ?></a></h6>
+          <span class="text-muted" style="font-size: 11px;"><i class="bi bi-calendar3 me-1"></i> <?= date('M d, Y', strtotime($row['PostingDate'])) ?></span>
+        </div>
+      <?php } ?>
+    </div>
+  </div>
 
 </div>
