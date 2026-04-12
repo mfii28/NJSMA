@@ -78,10 +78,7 @@ phpunit.xml
 # XAMPP specific
 /xampp/
 
-# Sensitive configuration files
-config.php
-configuration.php
-/database.php
+
 
 # Session files
 /sessions/
