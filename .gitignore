@@ -1,0 +1,88 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Dependency directories
+vendor/
+composer.lock
+
+# Uploads and user-generated content
+uploads/
+/dashboard/assets/img/gallery/*
+/dashboard/assets/img/profileImg/*
+/dashboard/assets/img/departments/*
+/dashboard/assets/img/members/*
+/dashboard/assets/img/projects/*
+/dashboard/assets/img/events/*
+/docs/*.pdf
+/docs/*.doc
+/docs/*.docx
+
+# Keep .gitkeep files in empty directories
+!.gitkeep
+
+# Logs and cache
+logs/
+cache/
+tmp/
+temp/
+*.log
+
+# Database files
+*.sql
+*.sqlite
+*.sqlite3
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Node modules (if using Node.js for frontend)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build files
+dist/
+build/
+public/assets/css/*.min.css
+public/assets/js/*.min.js
+
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml
+
+# XAMPP specific
+/xampp/
+
+# Sensitive configuration files
+config.php
+configuration.php
+/database.php
+
+# Session files
+/sessions/
+*.sess

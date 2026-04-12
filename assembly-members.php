@@ -29,7 +29,7 @@ include VIEW_PATH . '/partials/header.php';
             <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
               <div class="profile-card">
                 <div class="profile-img">
-                  <img src="<?= SITE_URL ?>/dashboard/assets/img/profileImg/<?= $m['Image'] ?? 'default.jpg' ?>" alt="<?= htmlspecialchars($m['FullName']) ?>">
+                  <img src="/njsma/dashboard/assets/img/members/<?= $m['Image'] ?? 'default.jpg' ?>" alt="<?= htmlspecialchars($m['FullName']) ?>">
                 </div>
                 <div class="profile-info">
                   <h4><?= htmlspecialchars($m['FullName']) ?></h4>

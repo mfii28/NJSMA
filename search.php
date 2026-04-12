@@ -25,46 +25,64 @@ include VIEW_PATH . '/partials/header.php';
 ?>
 
 <main id="main">
-    <section id="blog" class="blog mt-5">
+    <section class="page-header text-center">
+        <div class="container">
+            <h1>Search News & Updates</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center bg-transparent mt-2">
+                    <li class="breadcrumb-item"><a href="<?= SITE_URL ?>/" class="text-white"><i class="bi bi-house-door me-1"></i> Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Search</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section id="blog" class="blog pb-5">
         <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Search Results</h2>
-                <p><?= !empty($searchTerm) ? "Showing results for '" . htmlspecialchars($searchTerm) . "'" : "Latest Stories" ?></p>
-            </div>
 
             <div class="row g-5">
                 <div class="col-lg-8">
-                    <div class="row gy-4 posts-list">
+                    <div class="mb-4">
+                        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill mb-2">Search Results</span>
+                        <h3 class="fw-bold"><?= !empty($searchTerm) ? "Results for: '" . htmlspecialchars($searchTerm) . "'" : "All Latest Stories" ?></h3>
+                    </div>
+
+                    <div class="news-items-list mb-5">
                         <?php foreach ($results as $post): ?>
-                            <div class="col-12">
-                                <article class="d-flex align-items-center mb-4">
-                                    <div class="post-img me-4" style="width: 200px;">
-                                        <img src="<?= SITE_URL ?>/dashboard/postimages/<?= $post['PostImage'] ?>" alt="" class="img-fluid">
+                            <a href="<?= SITE_URL ?>/blogs?id=<?= $post['id'] ?>" class="news-card-horizontal mb-3 d-flex flex-column flex-md-row align-items-center shadow-sm" style="background: #fff; padding: 20px; border-radius: 12px; text-decoration: none; color: inherit;">
+                                <div class="news-card-img me-0 me-md-4 mb-3 mb-md-0" style="width: 100%; max-width: 250px; height: 160px; overflow: hidden; border-radius: 8px;">
+                                    <img src="<?= SITE_URL ?>/dashboard/postimages/<?= $post['PostImage'] ?>" alt="<?= htmlspecialchars($post['PostTitle']) ?>" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="news-card-content flex-grow-1">
+                                    <div class="mb-2">
+                                        <span class="cat text-warning fw-bold small text-uppercase"><?= htmlspecialchars($post['CategoryName']) ?></span>
+                                        <span class="date text-muted ms-3 small"><i class="bi bi-calendar3 me-1"></i> <?= date('M d, Y', strtotime($post['PostingDate'])) ?></span>
                                     </div>
-                                    <div>
-                                        <h2 class="title" style="font-size: 1.5rem;">
-                                            <a href="blogs.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['PostTitle']) ?></a>
-                                        </h2>
-                                        <p class="post-date text-muted">
-                                            <?= date('M d, Y', strtotime($post['PostingDate'])) ?> | <?= htmlspecialchars($post['CategoryName']) ?>
-                                        </p>
+                                    <h3 class="mb-3 text-dark fw-bold" style="font-size: 1.25rem;">
+                                        <?= htmlspecialchars($post['PostTitle']) ?>
+                                    </h3>
+                                    <div class="d-flex align-items-center mt-auto">
+                                        <span class="text-primary fw-bold small">Read More <i class="bi bi-arrow-right ms-1"></i></span>
                                     </div>
-                                </article>
-                            </div>
+                                </div>
+                            </a>
                         <?php endforeach; ?>
 
                         <?php if (empty($results)): ?>
-                            <p>No results found for your search.</p>
+                            <div class="text-center py-5 bg-light rounded-3">
+                                <i class="bi bi-search" style="font-size: 3rem; color: #ccc;"></i>
+                                <h4 class="mt-3 text-muted">No news articles found matching your search.</h4>
+                            </div>
                         <?php endif; ?>
                     </div>
 
                     <!-- Pagination -->
                     <?php if ($totalPages > 1): ?>
-                        <div class="blog-pagination mt-4">
-                            <ul class="justify-content-center">
+                        <div class="custom-pagination mt-4">
+                            <ul class="justify-content-center list-unstyled d-flex gap-2">
                                 <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                                     <li class="<?= $page == $i ? 'active' : '' ?>">
-                                        <a href="?s=<?= urlencode($searchTerm) ?>&page=<?= $i ?>"><?= $i ?></a>
+                                        <a href="?s=<?= urlencode($searchTerm) ?>&page=<?= $i ?>" class="btn <?= $page == $i ? 'btn-primary' : 'btn-outline-primary' ?> rounded-circle fw-bold" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;"><?= $i ?></a>
                                     </li>
                                 <?php endfor; ?>
                             </ul>

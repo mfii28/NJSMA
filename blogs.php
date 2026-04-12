@@ -15,7 +15,7 @@ if ($postId) {
     $post = Core\Database::getInstance()->fetch($sql, ['id' => (int)$postId]);
 
     if (!$post) {
-        header("Location: blogs.php");
+        header("Location: /njsma/blogs");
         exit;
     }
 
@@ -29,7 +29,7 @@ if ($postId) {
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center bg-transparent">
                         <li class="breadcrumb-item"><a href="<?= SITE_URL ?>" class="text-white">Home</a></li>
-                        <li class="breadcrumb-item"><a href="blogs.php" class="text-white">News</a></li>
+                        <li class="breadcrumb-item"><a href="/njsma/blogs" class="text-white">News</a></li>
                         <li class="breadcrumb-item active text-white" aria-current="page">Post Details</li>
                     </ol>
                 </nav>
@@ -43,7 +43,7 @@ if ($postId) {
                         <div class="content-card shadow-sm">
                             <article>
                                 <div class="post-img mb-4">
-                                    <img src="<?= SITE_URL ?>/dashboard/postimages/<?= $post['PostImage'] ?>" alt="" class="img-fluid rounded-4 shadow-sm w-100">
+                                    <img src="/njsma/dashboard/postimages/<?= $post['PostImage'] ?>" alt="" class="img-fluid rounded-4 shadow-sm w-100">
                                 </div>
                                 <div class="meta-top mb-4 d-flex gap-4 small text-muted border-bottom pb-3">
                                     <span><i class="bi bi-calendar3 me-2 text-primary"></i> <?= date('F d, Y', strtotime($post['PostingDate'])) ?></span>
@@ -122,7 +122,7 @@ if ($postId) {
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="blog-post-card">
                                     <div class="blog-img">
-                                        <img src="<?= SITE_URL ?>/dashboard/postimages/<?= $post['PostImage'] ?>" alt="<?= htmlspecialchars($post['PostTitle']) ?>">
+                                        <img src="/njsma/dashboard/postimages/<?= $post['PostImage'] ?>" alt="<?= htmlspecialchars($post['PostTitle']) ?>">
                                     </div>
                                     <div class="blog-content">
                                         <span class="blog-cat"><?= htmlspecialchars($post['CategoryName']) ?></span>

@@ -19,37 +19,37 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="/njsma/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="./dashboard/assets/img/logo-1.png" alt="">
+        <img src="/njsma/dashboard/assets/img/logo-1.png" alt="">
         <h1>NJSMA<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="./">Home</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="./#services">Services</a></li>
+          <li><a href="/njsma/">Home</a></li>
+          <li><a href="/njsma/about">About</a></li>
+          <li><a href="/njsma/#services">Services</a></li>
           <li class="dropdown"><a href="#"><span>Department</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="deptInfo.php">Central Administration</a></li>
-              <li><a href="deptInfo.php">Human Resource Department</a></li>
-              <li><a href="deptInfo.php">Social Welfare & Community Development</a></li>
-              <li><a href="deptInfo.php">Physical Planning</a></li>
-              <li><a href="deptInfo.php">Works Department</a></li>
-              <li><a href="deptInfo.php">View All</a></li>
+              <li><a href="/njsma/deptInfo">Central Administration</a></li>
+              <li><a href="/njsma/deptInfo">Human Resource Department</a></li>
+              <li><a href="/njsma/deptInfo">Social Welfare & Community Development</a></li>
+              <li><a href="/njsma/deptInfo">Physical Planning</a></li>
+              <li><a href="/njsma/deptInfo">Works Department</a></li>
+              <li><a href="/njsma/deptInfo">View All</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>The Assembly</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="assemblyInfo.php">About The Assembly</a></li>
-              <li><a href="Histroy.php">Our Histroy</a></li>
-              <li><a href="MCE.php">The MCE</a></li>
-              <li><a href="assemblyInfo.php">Team Members</a></li>
-              <li><a href="assemblyInfo.php">Members of parliament</a></li>
-              <li><a href="assemblyInfo.php">Document centre</a></li>
+              <li><a href="/njsma/assemblyInfo">About The Assembly</a></li>
+              <li><a href="/njsma/history">Our History</a></li>
+              <li><a href="/njsma/MCE">The MCE</a></li>
+              <li><a href="/njsma/management">Team Members</a></li>
+              <li><a href="/njsma/assembly-members">Members of parliament</a></li>
+              <li><a href="/njsma/repository">Document centre</a></li>
             </ul>
           </li>
-          <li><a href="contact.php">Projects</a></li>
+          <li><a href="/njsma/projects">Projects</a></li>
           <li class="dropdown"><a href="#"><span>Support</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">FAQs</a></li>
@@ -59,7 +59,7 @@
               <li><a href="#">Document centre</a></li>
             </ul>
           </li>
-          <li><a href="blogs.php">News</a></li>
+          <li><a href="/njsma/blogs">News</a></li>
         </ul>
       </nav><!-- .navbar -->
 

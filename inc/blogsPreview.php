@@ -27,15 +27,15 @@
         <article class="blog-details">
 
           <div class="post-img">
-            <img src="./dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid">
+            <img src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt="" class="img-fluid">
           </div>
 
           <h2 class="title">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h2>
 
           <div class="meta-top">
             <ul>
-              <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blogsPreview.php">John Doe</a></li>
-              <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blogsPreview.php"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
+              <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="/njsma/blogs">John Doe</a></li>
+              <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="/njsma/blogs"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
            
             </ul>
           </div><!-- End meta top -->
@@ -68,7 +68,7 @@
               Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores natus aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
               Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam voluptatem voluptatem accusamus mollitia aut atque aut.
             </p>
-            <img src="./dashboard/assets/img/heroImg/slider-1.jpg" class="img-fluid" alt="">
+            <img src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" class="img-fluid" alt="">
 
             <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
             <p>

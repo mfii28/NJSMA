@@ -69,12 +69,10 @@
                     <h3>Other Links</h3>
 <ul>
             <!-- <li><a href="department-details.php?d="></a></li> -->
-        <li><a href="theassembly.php">The Assembly</a></li>
-    <li><a href="themayor.php">The Mayor</a></li>
-    <li><a href="thepresidingmember.php">Presiding Member</a></li>
-   <!-- <li><a href="theassemblymembers.php">Assembly Members</a></li>-->
-    <li><a href="themembersofparliament.php">Members of Parliament</a></li>
-    <li><a href="thehistory.php">The History</a></li>
+        <li><a href="/njsma/assemblyInfo">The Assembly</a></li>
+    <li><a href="/njsma/MCE">The MCE</a></li>
+    <li><a href="/njsma/assembly-members">Assembly Members</a></li>
+    <li><a href="/njsma/history">The History</a></li>
 </ul>                </div>
             </div>
         </div> <!-- End .row -->

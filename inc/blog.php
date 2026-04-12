@@ -12,7 +12,7 @@ $latestPosts = $postModel->getAllActive(3);
             <div class="news-intro">
                 <h2>Latest <br>News</h2>
                 <p>Stay updated with the latest stories, announcements, and developmental projects from the New Juaben South Municipal Assembly.</p>
-                <a href="blogs.php" class="view-all-news">
+                <a href="/njsma/blogs" class="view-all-news">
                     View All News
                     <div class="view-all-circle">
                         <i class="bi bi-arrow-up-right"></i>
@@ -23,7 +23,10 @@ $latestPosts = $postModel->getAllActive(3);
             <!-- Right News List Column -->
             <div class="news-items-list">
                 <?php foreach ($latestPosts as $post): ?>
-                    <a href="blogs.php?id=<?= $post['id'] ?>" class="news-card-horizontal">
+                    <a href="/njsma/blogs?id=<?= $post['id'] ?>" class="news-card-horizontal">
+                        <div class="news-card-img">
+                            <img src="/njsma/dashboard/postimages/<?= $post['PostImage'] ?: 'slider-1.jpg' ?>" alt="">
+                        </div>
                         <div class="news-card-content">
                             <span class="cat"><?= htmlspecialchars($post['CategoryName']) ?></span>
                             <span class="date"><?= date('F Y', strtotime($post['PostingDate'])) ?></span>

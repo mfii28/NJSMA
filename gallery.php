@@ -38,7 +38,7 @@ include VIEW_PATH . '/partials/header.php';
               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
                 <div class="gallery-item-card">
                   <div class="gallery-img">
-                    <img src="<?= SITE_URL ?>/dashboard/assets/img/gallery/<?= $g['ThumbImage'] ?? 'default-gallery.jpg' ?>" class="img-fluid" alt="<?= htmlspecialchars($g['Title']) ?>">
+                    <img src="/njsma/dashboard/assets/img/gallery/<?= $g['ThumbImage'] ?? 'default-gallery.jpg' ?>" class="img-fluid" alt="<?= htmlspecialchars($g['Title']) ?>">
                   </div>
                   <div class="gallery-overlay">
                     <h4><?= htmlspecialchars($g['Title']) ?></h4>

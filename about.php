@@ -24,21 +24,25 @@ include VIEW_PATH . '/partials/header.php';
                 <div class="col-lg-8">
                     <div class="content-card shadow-sm mb-4">
                         <h3>Our Mandate</h3>
-                        <p>The New Juaben South Municipal Assembly (NJSMA) is one of the administrative districts in the Eastern Region of Ghana. Our primary mandate is to facilitate the overall development of the municipality through the formulation and implementation of plans, programs, and projects at the local level.</p>
-                        <p>We work towards providing essential social services, improving infrastructure, and promoting economic growth while ensuring the sustainable use of natural resources within our jurisdiction.</p>
+                        <?php if (!empty($GLOBAL_SETTINGS['about_mandate'])): ?>
+                            <?= nl2br(htmlspecialchars($GLOBAL_SETTINGS['about_mandate'])) ?>
+                        <?php else: ?>
+                            <p>The New Juaben South Municipal Assembly (NJSMA) is one of the administrative districts in the Eastern Region of Ghana. Our primary mandate is to facilitate the overall development of the municipality through the formulation and implementation of plans, programs, and projects at the local level.</p>
+                            <p>We work towards providing essential social services, improving infrastructure, and promoting economic growth while ensuring the sustainable use of natural resources within our jurisdiction.</p>
+                        <?php endif; ?>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="content-card shadow-sm h-100">
                                 <h4 class="text-primary fw-bold"><i class="bi bi-eye me-2"></i> Vision</h4>
-                                <p class="small text-muted">To be a world-class municipal assembly providing excellent services to its citizens in a clean and safe environment.</p>
+                                <p class="small text-muted"><?= htmlspecialchars($GLOBAL_SETTINGS['about_vision'] ?? 'To be a leading Municipal Assembly that provides excellent services in a clean and safe environment.') ?></p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="content-card shadow-sm h-100">
                                 <h4 class="text-primary fw-bold"><i class="bi bi-bullseye me-2"></i> Mission</h4>
-                                <p class="small text-muted">Facilitating the improvement of the quality of life of the people in the municipality through equitable resource mobilization and distribution.</p>
+                                <p class="small text-muted"><?= htmlspecialchars($GLOBAL_SETTINGS['about_mission'] ?? 'To improve the living standards of the people through effective resource mobilization and distribution.') ?></p>
                             </div>
                         </div>
                     </div>
@@ -48,10 +52,10 @@ include VIEW_PATH . '/partials/header.php';
                     <div class="sidebar-nav shadow-sm">
                         <h4>Quick Links</h4>
                         <ul class="list-unstyled mb-0">
-                            <li><a href="<?= SITE_URL ?>/MCE.php"><i class="bi bi-person me-2"></i> The MCE</a></li>
-                            <li><a href="<?= SITE_URL ?>/management.php"><i class="bi bi-people me-2"></i> Management Team</a></li>
-                            <li><a href="<?= SITE_URL ?>/assembly-members.php"><i class="bi bi-person-badge me-2"></i> Assembly Members</a></li>
-                            <li><a href="<?= SITE_URL ?>/Histroy.php"><i class="bi bi-clock-history me-2"></i> Our History</a></li>
+                            <li><a href="<?= SITE_URL ?>/MCE"><i class="bi bi-person me-2"></i> The MCE</a></li>
+                            <li><a href="<?= SITE_URL ?>/management"><i class="bi bi-people me-2"></i> Management Team</a></li>
+                            <li><a href="<?= SITE_URL ?>/assembly-members"><i class="bi bi-person-badge me-2"></i> Assembly Members</a></li>
+                            <li><a href="<?= SITE_URL ?>/Histroy"><i class="bi bi-clock-history me-2"></i> Our History</a></li>
                         </ul>
                     </div>
                 </div>

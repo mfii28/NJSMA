@@ -41,12 +41,23 @@ include VIEW_PATH . '/partials/header.php';
                             <li><a href="?cat=Forms"><i class="bi bi-file-earmark-text me-2"></i> Forms & Applications</a></li>
                             <li><a href="?cat=Legal"><i class="bi bi-shield-check me-2"></i> Bye-Laws & Legal</a></li>
                             <li><a href="?cat=Reports"><i class="bi bi-graph-up-arrow me-2"></i> Budget & Reports</a></li>
+                            <li><a href="?cat=Permits"><i class="bi bi-diagram-3 me-2"></i> Permit Flow Charts</a></li>
+                            <li><a href="?cat=Fee%20Fixing"><i class="bi bi-cash-coin me-2"></i> Fee Fixing</a></li>
                         </ul>
                     </div>
 
-                    <div class="info-banner small p-3">
+                    <div class="info-banner small p-3 mb-4">
                         <h6>Need Assistance?</h6>
                         <p class="mb-0 small">Visit our physical office for certified copies of any municipal documents.</p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="sidebar-nav shadow-sm mb-4">
+                        <h4>Quick Links</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="/njsma/service-processes"><i class="bi bi-arrow-right-circle me-2 text-primary"></i> Service Processes</a></li>
+                            <li><a href="/njsma/location"><i class="bi bi-geo-alt me-2 text-primary"></i> Location & Land Size</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-9">

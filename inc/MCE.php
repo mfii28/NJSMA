@@ -7,10 +7,10 @@ $row = mysqli_fetch_array($result);
     <div class="container">
         <div class="row">
             <div class="col-lg-12 d-block d-lg-none">
-                <h2><img src="./dashboard/assets/img/logo-1.png" class="img-fluid" alt=""> The M.C.E</h2></div>
+                <h2><img src="/njsma/dashboard/assets/img/logo-1.png" class="img-fluid" alt=""> The M.C.E</h2></div>
             <div class="col-lg-4 the-mayor-img">
                 <div class="the-mayor-img-wrap d-flex justify-content-center">
-                    <img src="./dashboard/assets/img/profileImg/mce.jpg" class="img-fluid" alt="">
+                    <img src="/njsma/dashboard/assets/img/profileImg/mce.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="the-img-text-wrap">
                     <h3>Hon.<?php echo $row["first_name"]; echo " "; echo  $row["last_name"]; ?></h3>
@@ -19,7 +19,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="col-lg-6 the-mayor-profile">
                 <h2 class="d-none d-lg-block">
-                    <img src="./dashboard/assets/img/logo-1.png" class="img-fluid" alt="">The M.C.E</h2>
+                    <img src="/njsma/dashboard/assets/img/logo-1.png" class="img-fluid" alt="">The M.C.E</h2>
                 <div class="the-mayor-profile-wrap">
                     <p>Hon. Isaac Appaw – Gyasi  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vero a hic obcaecati doloremque fugit molestiae, fuga optio sed minima id ab sit quo totam iusto, nostrum rerum maiores aliquam. Aperiam doloribus in animi eveniet, facere molestiae possimus cum est!</p>
 <h3>Career Path</h3>
@@ -45,12 +45,10 @@ He was sworn into office as the Municipal Chief Executive of New Juaben South Mu
                     <h3>Other Links</h3>
 <ul>
             <!-- <li><a href="department-details.php?d="></a></li> -->
-        <li><a href="theassembly.php">The Assembly</a></li>
-    <li><a href="themayor.php">The Mayor</a></li>
-    <li><a href="thepresidingmember.php">Presiding Member</a></li>
-   <!-- <li><a href="theassemblymembers.php">Assembly Members</a></li>-->
-    <li><a href="themembersofparliament.php">Members of Parliament</a></li>
-    <li><a href="thehistory.php">The History</a></li>
+        <li><a href="/njsma/assemblyInfo">The Assembly</a></li>
+    <li><a href="/njsma/MCE">The MCE</a></li>
+    <li><a href="/njsma/assembly-members">Assembly Members</a></li>
+    <li><a href="/njsma/history">The History</a></li>
 </ul>                </div>
             </div>
  

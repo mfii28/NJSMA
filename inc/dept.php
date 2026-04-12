@@ -24,7 +24,7 @@
                          
                             <!-- <div class="row"> -->
                                 <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>
@@ -81,7 +81,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>Richard Oduro                                    </h3>
@@ -111,7 +111,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>.                                     </h3>
@@ -138,7 +138,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>.                                     </h3>
@@ -165,7 +165,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>Emmanuel Appiah                                    </h3>
@@ -192,7 +192,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>Michael Aryeequaye Adamah                                    </h3>
@@ -218,7 +218,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>Kennedy Anin                                    </h3>
@@ -243,7 +243,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>Joshua Abeashi Mensah                                    </h3>
@@ -268,7 +268,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>.                                     </h3>
@@ -293,7 +293,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>.                                     </h3>
@@ -318,7 +318,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>.                                     </h3>
@@ -343,7 +343,7 @@
                                         <div class="col-lg-2 sub-unit-officers">
                         <div class="sub-unit-officers-wrap">
                                                             <div class="img-wrap d-flex justify-content-center">
-                                    <img class="img-fluid" src="./dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
+                                    <img class="img-fluid" src="/njsma/dashboard/assets/img/heroImg/slider-1.jpg" alt=""> 
                                 </div> 
                                 <div class="text-wrap">
                                     <h3>Enock Nii Yarboi Annan                                    </h3>
@@ -368,26 +368,25 @@
          <a id="back-to-top" href="#" class="btn btn-success back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="fas fa-angle-up"></span></a>        <!--End back to top-->
 
 
-        <script src="_/js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="/njsma/lib/vendor/modernizr/modernizr.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="_/js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-        <script src="_/js/jquery-ui.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/njsma/lib/vendor/jquery/jquery.min.js"><\/script>')</script>
+        <script src="/njsma/lib/vendor/jquery-ui/jquery-ui.min.js"></script>
        
         <!-- Bootstrap -->
-        <script src="_/js/popper.min.js"></script>
-        <script src="_/js/bootstrap.js"></script>
+        <script src="/njsma/lib/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- /Bootstrap -->
         <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script> -->
-        <script src="_/js/fontawesome-all.min.js"></script>
+        <script src="/njsma/lib/vendor/boxicons/js/boxicons.min.js"></script>
         
-        <script src='_/js/stickyfloat.js'></script>    
+        <script src="/njsma/lib/vendor/stickyfloat/stickyfloat.js"></script>    
        
-        <script src="_/js/jquery.sticky.js"></script>
-        <script src="_/js/parallax.min.js"></script>
+        <script src="/njsma/lib/vendor/jquery-sticky/jquery.sticky.js"></script>
+        <script src="/njsma/lib/vendor/parallax/parallax.min.js"></script>
 
-        <script src="_/js/plugins.js"></script>
-        <script src="_/js/ug-theme-slider.js"></script>
-        <script src="_/js/main.js"></script>
+        <script src="/njsma/lib/js/plugins.js"></script>
+        <script src="/njsma/lib/vendor/unitegallery/ug-theme-slider.js"></script>
+        <script src="/njsma/lib/main.js"></script>
 
         <script>
             $(function(){

@@ -7,7 +7,7 @@ $mceInfo = Core\Database::getInstance()->fetch("SELECT * FROM mce LIMIT 1");
         <div class="row align-items-center">
             <div class="col-lg-5">
                 <div class="mce-img-wrapper">
-                    <img src="<?= SITE_URL ?>/dashboard/assets/img/mce.jpg" alt="Hon. <?= $mceInfo['first_name'] ?> <?= $mceInfo['last_name'] ?>" class="img-fluid rounded-4 shadow">
+                    <img src="/njsma/dashboard/assets/img/mce.jpg" alt="Hon. <?= $mceInfo['first_name'] ?> <?= $mceInfo['last_name'] ?>" class="img-fluid rounded-4 shadow">
                     <div class="mce-label">
                         <h4>Hon. <?= $mceInfo['first_name'] ?> <?= $mceInfo['last_name'] ?></h4>
                         <p>Municipal Chief Executive</p>
@@ -23,8 +23,8 @@ $mceInfo = Core\Database::getInstance()->fetch("SELECT * FROM mce LIMIT 1");
                         <p>As we navigate the path of transformation, we invite every resident and stakeholder to engage with us, share feedback, and participate in our collective journey to make Koforidua a model of municipal excellence in Ghana.</p>
                     </div>
                     <div class="mt-4">
-                        <a href="MCE.php" class="btn btn-success px-4 py-2 me-3">Full Profile</a>
-                        <a href="about.php" class="btn btn-outline-secondary px-4 py-2">About NJSMA</a>
+                        <a href="/njsma/MCE" class="btn btn-success px-4 py-2 me-3">Full Profile</a>
+                        <a href="/njsma/about" class="btn btn-outline-secondary px-4 py-2">About NJSMA</a>
                     </div>
                 </div>
             </div>

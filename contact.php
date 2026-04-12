@@ -29,21 +29,21 @@ include VIEW_PATH . '/partials/header.php';
                                 <div class="icon-box me-3 text-primary"><i class="bi bi-geo-alt fs-4"></i></div>
                                 <div>
                                     <h6 class="fw-bold mb-1">Office Location</h6>
-                                    <p class="small text-muted mb-0">EN-010-4770, Koforidua, Eastern Region</p>
+                                    <p class="small text-muted mb-0"><?= htmlspecialchars($GLOBAL_SETTINGS['contact_address'] ?? 'EN-010-4770, Koforidua, Eastern Region') ?></p>
                                 </div>
                             </div>
                             <div class="d-flex mb-3">
                                 <div class="icon-box me-3 text-primary"><i class="bi bi-telephone fs-4"></i></div>
                                 <div>
                                     <h6 class="fw-bold mb-1">Phone Number</h6>
-                                    <p class="small text-muted mb-0">+233 34 229 3669</p>
+                                    <p class="small text-muted mb-0"><?= htmlspecialchars($GLOBAL_SETTINGS['contact_phone'] ?? '+233 34 229 3669') ?></p>
                                 </div>
                             </div>
                             <div class="d-flex mb-0">
                                 <div class="icon-box me-3 text-primary"><i class="bi bi-envelope fs-4"></i></div>
                                 <div>
                                     <h6 class="fw-bold mb-1">Email Address</h6>
-                                    <p class="small text-muted mb-0">info@njsma.gov.gh</p>
+                                    <p class="small text-muted mb-0"><?= htmlspecialchars($GLOBAL_SETTINGS['contact_email'] ?? 'info@njsma.gov.gh') ?></p>
                                 </div>
                             </div>
                         </div>

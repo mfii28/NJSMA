@@ -80,17 +80,14 @@ Social Sevices</a></li>
 
 
   <!-- Vendor JS Files -->
-  <script src="./lib/vendor/jquery/js/jquery.bundle.min.js"></script>
-  <script src="./lib/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./lib/vendor/aos/aos.js"></script>
-  <script src="./lib/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="./lib/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="./lib/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="./lib/vendor/php-email-form/validate.js"></script>
+  <script src="/njsma/lib/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/njsma/lib/vendor/aos/aos.js"></script>
+  <script src="/njsma/lib/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/njsma/lib/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/njsma/lib/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Template Main JS File -->
-
-<script src="./lib/main.js"></script>
+<script src="/njsma/lib/main.js"></script>
 <script>
 
    /**
