@@ -17,10 +17,9 @@ $mceInfo = Core\Database::getInstance()->fetch("SELECT * FROM mce LIMIT 1");
             <div class="col-lg-7 ps-lg-5 mt-4 mt-lg-0">
                 <div class="mce-message">
                     <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill mb-3">Welcome Remark</span>
-                    <h2 class="fw-bold mb-4">Leading Our Municipality Towards Sustainable Growth</h2>
+                    <h2 class="fw-bold mb-4"><?= htmlspecialchars($mceInfo['welcome_title'] ?? 'Leading Our Municipality Towards Sustainable Growth') ?></h2>
                     <div class="message-content text-muted">
-                        <p>It is my distinct pleasure to welcome you to the official digital portal of the New Juaben South Municipal Assembly. Our commitment is to foster a transparent, accountable, and citizen-centric governance system that brings development to your doorstep.</p>
-                        <p>As we navigate the path of transformation, we invite every resident and stakeholder to engage with us, share feedback, and participate in our collective journey to make Koforidua a model of municipal excellence in Ghana.</p>
+                        <?= nl2br(htmlspecialchars($mceInfo['welcome_message'] ?? "It is my distinct pleasure to welcome you to the official digital portal of the New Juaben South Municipal Assembly. Our commitment is to foster a transparent, accountable, and citizen-centric governance system that brings development to your doorstep.\n\nAs we navigate the path of transformation, we invite every resident and stakeholder to engage with us, share feedback, and participate in our collective journey to make Koforidua a model of municipal excellence in Ghana.")) ?>
                     </div>
                     <div class="mt-4">
                         <a href="/njsma/MCE" class="btn btn-success px-4 py-2 me-3">Full Profile</a>

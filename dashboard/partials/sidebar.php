@@ -24,11 +24,13 @@ function navLink($href, $icon, $label, $file, $currentFile) {
   <ul class="adm-nav">
     <?= navLink(SITE_URL.'/dashboard/index.php', 'bi-grid-1x2-fill', 'Dashboard', $currentFile, $currentFile) ?>
 
-    <li class="adm-nav-section">Content</li>
+    <li class="adm-nav-section">Website Content</li>
     <?= navLink(SITE_URL.'/dashboard/posts.php', 'bi-newspaper', 'News & Posts', $currentFile, $currentFile) ?>
     <?= navLink(SITE_URL.'/dashboard/events-manage.php', 'bi-calendar-event', 'Events', $currentFile, $currentFile) ?>
     <?= navLink(SITE_URL.'/dashboard/gallery-manage.php', 'bi-images', 'Gallery', $currentFile, $currentFile) ?>
-    <?= navLink(SITE_URL.'/dashboard/pages-manage.php', 'bi-file-earmark-richtext', 'Static Pages', $currentFile, $currentFile) ?>
+    <?= navLink(SITE_URL.'/dashboard/services-manage.php', 'bi-grid-3x3-gap', 'Services', $currentFile, $currentFile) ?>
+    <?= navLink(SITE_URL.'/dashboard/hero-slides-manage.php', 'bi-images', 'Hero Slides', $currentFile, $currentFile) ?>
+    <?= navLink(SITE_URL.'/dashboard/pages-manage.php', 'bi-file-earmark-text', 'Custom Pages', $currentFile, $currentFile) ?>
 
     <li class="adm-nav-section">Municipal</li>
     <?= navLink(SITE_URL.'/dashboard/mce-manage.php', 'bi-award', 'MCE Office', $currentFile, $currentFile) ?>
@@ -49,6 +51,7 @@ function navLink($href, $icon, $label, $file, $currentFile) {
     <?= navLink(SITE_URL.'/dashboard/zonal-councils.php', 'bi-geo-alt', 'Zonal Councils', $currentFile, $currentFile) ?>
 
     <li class="adm-nav-section">System</li>
+    <?= navLink(SITE_URL.'/dashboard/admin-manage.php', 'bi-shield-lock', 'Admin Users', $currentFile, $currentFile) ?>
     <?= navLink(SITE_URL.'/dashboard/system-settings.php', 'bi-gear-fill', 'Site Settings', $currentFile, $currentFile) ?>
 
     <li><div class="nav-divider"></div></li>

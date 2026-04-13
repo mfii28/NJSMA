@@ -1,0 +1,99 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - text: 
+        - generic: GA-000-0000 | Koforidua, GH
+      - generic [ref=e6]:
+        - text: 
+        - link "info@njsma.gov.gh":
+          - /url: mailto:info@njsma.gov.gh
+      - generic [ref=e7]:
+        - link "Bye-Laws" [ref=e8] [cursor=pointer]:
+          - /url: http://localhost/njsma/repository?cat=Bye-Laws
+        - text: "|"
+        - link "News" [ref=e9] [cursor=pointer]:
+          - /url: http://localhost/njsma/blogs
+        - text: "|"
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: http://localhost/njsma/contact
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - link "" [ref=e13] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e14]: 
+        - link "" [ref=e15] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e16]: 
+      - link "Pay for Fees" [ref=e17] [cursor=pointer]:
+        - /url: https://customer.gov-gh.com
+  - banner [ref=e18]:
+    - generic [ref=e19]:
+      - link "NJSMA Logo NJSMA." [ref=e20] [cursor=pointer]:
+        - /url: http://localhost/njsma/
+        - img "NJSMA Logo" [ref=e21]
+        - heading "NJSMA." [level=1] [ref=e22]
+      - navigation [ref=e23]:
+        - list [ref=e24]:
+          - listitem [ref=e25]:
+            - link "Home" [ref=e26] [cursor=pointer]:
+              - /url: http://localhost/njsma/
+          - listitem [ref=e27]:
+            - link "The Assembly " [ref=e28] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e29]: The Assembly
+              - generic [ref=e30]: 
+          - listitem [ref=e31]:
+            - link "Departments " [ref=e32] [cursor=pointer]:
+              - /url: http://localhost/njsma/deptInfo
+              - generic [ref=e33]: Departments
+              - generic [ref=e34]: 
+          - listitem [ref=e35]:
+            - link "Services" [ref=e36] [cursor=pointer]:
+              - /url: http://localhost/njsma/service-charter
+          - listitem [ref=e37]:
+            - link "Projects & Tenders" [ref=e38] [cursor=pointer]:
+              - /url: http://localhost/njsma/tenders
+          - listitem [ref=e39]:
+            - link "Media Center " [ref=e40] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e41]: Media Center
+              - generic [ref=e42]: 
+          - listitem [ref=e43]:
+            - link "Contact" [ref=e44] [cursor=pointer]:
+              - /url: http://localhost/njsma/contact
+      - generic [ref=e45] [cursor=pointer]: 
+      - text: 
+  - generic [ref=e47]:
+    - list
+    - listbox [ref=e48]:
+      - generic [ref=e51]:
+        - generic [ref=e52]: Official Municipal Website
+        - heading "Welcome to <span>New Juaben South</span>" [level=2] [ref=e53]
+        - paragraph [ref=e54]: Providing excellent municipal services through transparency, citizen participation, and sustainable development. We are committed to making Koforidua the beacon of progress in Ghana.
+        - generic [ref=e55]:
+          - link "Discover More" [ref=e56] [cursor=pointer]:
+            - /url: /njsma/about
+          - link "Our Services" [ref=e57] [cursor=pointer]:
+            - /url: /njsma/service-charter
+    - button [ref=e58] [cursor=pointer]:
+      - generic [ref=e59]: 
+    - button [ref=e60] [cursor=pointer]:
+      - generic [ref=e61]: 
+  - generic [ref=e64]:
+    - generic [ref=e66]:
+      - img "Hon. Isaac Appaw-Gyasi" [ref=e67]
+      - generic [ref=e68]:
+        - heading "Hon. Isaac Appaw-Gyasi" [level=4] [ref=e69]
+        - paragraph [ref=e70]: Municipal Chief Executive
+    - generic [ref=e72]:
+      - generic [ref=e73]: Welcome Remark
+      - heading "Leading Our Municipality Towards Sustainable Growth" [level=2] [ref=e74]
+      - generic [ref=e75]:
+        - text: It is my distinct pleasure to welcome you to the official digital portal of the New Juaben South Municipal Assembly. Our commitment is to foster a transparent, accountable, and citizen-centric governance system that brings development to your doorstep.
+        - text: As we navigate the path of transformation, we invite every resident and stakeholder to engage with us, share feedback, and participate in our collective journey to make Koforidua a model of municipal excellence in Ghana.
+      - generic [ref=e76]:
+        - link "Full Profile" [ref=e77] [cursor=pointer]:
+          - /url: /njsma/MCE
+        - link "About NJSMA" [ref=e78] [cursor=pointer]:
+          - /url: /njsma/about

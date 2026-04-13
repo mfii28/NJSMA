@@ -35,7 +35,7 @@
                         <li><a href="<?= SITE_URL ?>/MCE">The MCE</a></li>
                         <li><a href="<?= SITE_URL ?>/management">Management Team</a></li>
                         <li><a href="<?= SITE_URL ?>/assembly-members">Assembly Members</a></li>
-                        <li><a href="<?= SITE_URL ?>/Histroy">Our History</a></li>
+                        <li><a href="<?= SITE_URL ?>/history">Our History</a></li>
                         <li><a href="<?= SITE_URL ?>/service-charter">Service Charter</a></li>
                     </ul>
                 </li>

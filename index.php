@@ -12,6 +12,9 @@ include ROOT_PATH . '/inc/Hero.php';
 // MCE Featured Section
 include ROOT_PATH . '/inc/featured.php';
 
+// What's New Section
+include ROOT_PATH . '/inc/whats-new.php';
+
 // Services/Departments Overview
 include ROOT_PATH . '/inc/services.php';
 

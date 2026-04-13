@@ -1,0 +1,28 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: NJSMA.
+    - generic [ref=e7]: New Juaben South Municipal Assembly
+    - heading "Welcome Back" [level=2] [ref=e8]
+    - paragraph [ref=e9]: Sign in to your administrator account to manage your site.
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]: 
+        - textbox "Username" [ref=e13]
+      - generic [ref=e14]:
+        - generic [ref=e15]: 
+        - textbox "Password" [ref=e16]
+      - button "Sign In " [ref=e17] [cursor=pointer]:
+        - text: Sign In
+        - generic [ref=e18]: 
+    - generic [ref=e19]:
+      - link "Forgot password?" [ref=e20] [cursor=pointer]:
+        - /url: forgot-password.php
+      - generic [ref=e21]: Need help? Contact IT
+  - generic [ref=e22]:
+    - generic [ref=e23]: 🏛️
+    - heading "Secure Admin Portal" [level=3] [ref=e24]
+    - paragraph [ref=e25]: Manage your municipal website's content, departments, news, tenders, and global settings – all in one place.
+    - link " View Public Site" [ref=e26] [cursor=pointer]:
+      - /url: http://localhost/njsma/
+      - generic [ref=e27]: 
+      - text: View Public Site

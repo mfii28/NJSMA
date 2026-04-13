@@ -1,8 +1,24 @@
 <?php
+/**
+ * Admin Login Page
+ * Uses secure Admin model for authentication
+ */
+
 require_once __DIR__ . '/../src/init.php';
 
+use Models\Admin;
+
+// Redirect if already logged in
 if (!empty($_SESSION['admin_logged_in'])) {
     header('Location: index.php');
+    exit;
+}
+
+$adminModel = new Admin();
+
+// Check if first-time setup is needed
+if (!$adminModel->adminExists()) {
+    header('Location: setup.php');
     exit;
 }
 
@@ -10,12 +26,14 @@ $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
-    $adminUser = $GLOBAL_SETTINGS['admin_username'] ?? 'admin';
-    $adminPass = $GLOBAL_SETTINGS['admin_password_hash'] ?? password_hash('admin123', PASSWORD_DEFAULT);
-
-    if ($username === $adminUser && password_verify($password, $adminPass)) {
+    
+    $admin = $adminModel->verify($username, $password);
+    
+    if ($admin) {
         $_SESSION['admin_logged_in'] = true;
-        $_SESSION['admin_username'] = $username;
+        $_SESSION['admin_id'] = $admin['id'];
+        $_SESSION['admin_username'] = $admin['username'];
+        $_SESSION['admin_full_name'] = $admin['full_name'];
         header('Location: index.php');
         exit;
     } else {
@@ -111,7 +129,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </button>
           </form>
 
-          <p class="text-center mt-4 text-muted small">Default credentials: <strong>admin</strong> / <strong>admin123</strong></p>
+          <div class="d-flex justify-content-between align-items-center mt-4">
+            <a href="forgot-password.php" class="text-muted small text-decoration-none">Forgot password?</a>
+            <span class="text-muted small">Need help? Contact IT</span>
+          </div>
         </div>
         <div class="col-lg-6 login-right d-none d-lg-flex">
           <div class="icon-hero">🏛️</div>
